@@ -6,10 +6,10 @@
     <title>KritaVa | Daily Tech Architecture</title>
     
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" onerror="this.style.display='none'">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" onerror="this.style.display='none'">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" onerror="this.style.display='none'">
+    <link rel="icon" href="favicon.ico" onerror="this.style.display='none'">
     
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -58,8 +58,8 @@
 
     <style>
         body {
-            background-color: #050505;
-            color: #F5F5F5;
+            background-color: #050505 !important;
+            color: #F5F5F5 !important;
             overflow-x: hidden;
         }
 
@@ -107,6 +107,7 @@
             height: 100vh;
             z-index: -1;
             pointer-events: none;
+            background: transparent !important;
         }
 
         .dropdown-content {
@@ -147,10 +148,10 @@
         }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-accent1 selection:text-brand-bg1">
+<body class="bg-[#050505] text-[#F5F5F5] antialiased selection:bg-[#4FA3A5] selection:text-[#050505] min-h-screen relative overflow-x-hidden">
 
-    <!-- ThreeJS Background Canvas -->
-    <canvas id="bg-canvas"></canvas>
+    <!-- ThreeJS Background Canvas (Styled defensively to guarantee transparency) -->
+    <canvas id="bg-canvas" style="background: transparent !important;"></canvas>
 
     <!-- Scroll-Linked Pill Navbar -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[92%] md:w-[80%] max-w-5xl">
@@ -158,9 +159,9 @@
             <!-- Logo -->
             <a href="https://kritavatech.github.io/-/" target="_blank" class="flex items-center gap-3 group transition-transform duration-300 hover:scale-105">
                 <div class="w-9 h-9 rounded-full bg-brand-bg2 border border-brand-border flex items-center justify-center group-hover:border-brand-accent1 group-hover:shadow-[0_0_12px_rgba(79,163,165,0.4)] transition-all duration-300 overflow-hidden">
-                    <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" alt="KritaVa Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" onerror="this.style.display='none'" alt="KritaVa Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                 </div>
-                <span class="font-bold text-lg tracking-wide text-brand-text1 group-hover:text-brand-accent1 group-hover:drop-shadow-[0_0_8px_rgba(79,163,165,0.8)] transition-all duration-300">KritaVa</span>
+                <span class="font-bold text-lg tracking-wide text-[#F5F5F5] group-hover:text-brand-accent1 group-hover:drop-shadow-[0_0_8px_rgba(79,163,165,0.8)] transition-all duration-300">KritaVa</span>
             </a>
 
             <!-- Language Dropdown -->
@@ -348,9 +349,9 @@
             <div class="flex flex-col items-center md:items-start gap-2">
                 <a href="https://kritavatech.github.io/-/" target="_blank" class="flex items-center gap-3 group transition-transform duration-300 hover:scale-105">
                     <div class="w-10 h-10 rounded-full bg-brand-bg2 border border-brand-border flex items-center justify-center overflow-hidden group-hover:border-brand-accent1 group-hover:shadow-[0_0_12px_rgba(79,163,165,0.4)] transition-all duration-300">
-                        <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" alt="KritaVa Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" onerror="this.style.display='none'" alt="KritaVa Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
-                    <span class="font-bold text-xl tracking-wide text-brand-text1 group-hover:text-brand-accent1 group-hover:drop-shadow-[0_0_8px_rgba(79,163,165,0.8)] transition-all duration-300">KritaVa</span>
+                    <span class="font-bold text-xl tracking-wide text-[#F5F5F5] group-hover:text-brand-accent1 group-hover:drop-shadow-[0_0_8px_rgba(79,163,165,0.8)] transition-all duration-300">KritaVa</span>
                 </a>
                 <p class="text-brand-text2 text-sm">Intelligent infrastructure. Practical execution.</p>
             </div>
@@ -395,7 +396,7 @@
 
     <!-- KritaVa AI Floating Widget Button -->
     <button id="chat-toggle" class="fixed bottom-6 right-6 w-14 h-14 bg-brand-bg2 border border-brand-accent1 rounded-full shadow-[0_0_15px_rgba(79,163,165,0.4)] flex items-center justify-center z-50 hover:scale-110 transition-transform animate-glow group overflow-hidden p-0.5">
-        <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" alt="AI Toggle" class="w-full h-full object-cover rounded-full">
+        <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" onerror="this.style.display='none'" alt="AI Toggle" class="w-full h-full object-cover rounded-full">
     </button>
 
     <!-- Chat Widget Window -->
@@ -404,7 +405,7 @@
         <div class="px-5 py-4 border-b border-white/10 bg-brand-bg2/50 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-full bg-brand-bg1 border border-brand-accent1 flex items-center justify-center relative overflow-hidden">
-                    <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" alt="AI Avatar" class="w-full h-full object-cover rounded-full">
+                    <img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" onerror="this.style.display='none'" alt="AI Avatar" class="w-full h-full object-cover rounded-full">
                     <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full border border-brand-bg1"></span>
                 </div>
                 <div>
@@ -473,7 +474,7 @@
             },
             'bh': { 
                 name: 'भोजपुरी', title: 'बुद्धिमानी.', subtitle: 'तेजी से बढ़ रहल बा।', 
-                desc: "बнаवे वाला लोग खातिर आज के तकनीकी बदलाव। कवनो फालतू गप ना। बस उ सब जानकारी जवन रउआ के आवे वाला कल के ढांचा तइयार करे खातिर चाहीं।",
+                desc: "बनावे वाला लोग खातिर आज के तकनीकी बदलाव। कवनो फालतू गप ना। बस उ सब जानकारी जवन रउआ के आवे वाला कल के ढांचा तइयार करे खातिर चाहीं।",
                 cards: [
                     { title: "हार्क उठवलस $700M", desc: "ब्रेट एडकॉक के हार्क कंपनी $6B के वैल्यूएशन पर $700M जुटवले बिया, जवन पर्सनल एआई हार्डवेयर आ ऑन-डिवाइस कंप्यूटिंग पर काम कर रहल बा।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>मुख्य अपडेट:</strong><p>हार्क ने पर्सनल एआई हार्डवेयर खातिर $700M जुटा लेले बा। ई टीम डिवाइस पर लोकल कंप्यूटिंग आ यूज़र के अनुभव के बेहतर बनावे में लागल बिया।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>इंडस्ट्री ट्रेंड:</strong><p>स्मार्टफोन हमेशा एआई के पहिला माध्यम ना रही। अब वीसी लोग एआई वियरेबल्स आ नया एआई डिवाइस पर बड़का दांव लगा रहल बा।</p></div>", cat: "कंज्यूमर हार्डवेयर" },
                     { title: "सिलिकॉन वैली के बड़ गठबंधन", desc: "Nvidia, AMD, Intel, आ Qualcomm ने एक ही स्टार्टअप (Hark) में निवेश कइले बा लोग—ई एम्बिएंट एआई पर कब्जा करे के बड़का प्रयास बा।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>बड़ गठबंधन:</strong><p>चारों प्रतिद्वंद्वी चिप दिग्गज एकही राउंड में निवेश कइले बा लोग। एकर मतलब बा कि केहू भी एम्बिएंट एआई के पहिला रास्ता छोड़ल नइखे चाहत।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>रणनीति:</strong><p>हार्क एह पइसा से एगो नया Nvidia B200 क्लस्टर बना रहल बा आ टीम में 200 रिसर्चर लोग के जोड़ रहल बा।</p></div>", cat: "इन्फ्रास्ट्रक्चर कैपिटल" },
@@ -491,16 +492,16 @@
                 name: 'मैथिली', title: 'प्रज्ञा.', subtitle: 'तीव्र गति सं विकसित भ रहल अछि।', 
                 desc: "बनाबय वाला लेल आइ के तकनीकी परिवर्तन। कोनो दिखावा नहि। मात्र ओ ज्ञान जे भविष्यक निर्माण लेल आवश्यक अछि।",
                 cards: [
-                    { title: "हार्क उठेलक $700M", desc: "ब्रेट एडकॉक क हार्क $6B क वैल्यूएशन पर $700M जुटेलक अछि, जे पर्सनल एआई हार्डवेयर आ ऑन-डिवाइस कंप्यूटिंग पर काज क' रहल अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>मुख्य अपडेट:</strong><p>हार्क ने पर्सनल एआई हार्डवेयर लेल $700M जुटा लेलक अछि। ई टीम डिवाइस पर लोकल कंप्यूटिंग आ यूज़र केँ अनुभव केँ बेहतर बनेबा मे लागल अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>इंडस्ट्री ट्रेंड:</strong><p>स्मार्टफोन हमेशा एआई क मुख्य माध्यम नहि रहत। अब वीसी सब एआई वियरेबल्स आ नया एआई डिवाइस पर पैघ दांव लगा रहल अछि।</p></div>", cat: "कंज्यूमर हार्डवेयर" },
+                    { title: "हार्क उठेलक $700M", desc: "ब्रेट एडकॉक क हार्क $6B क वैल्यूएशन पर $700M जुटेलक अछि, जे पर्सनल एआई हार्डवेयर आ ऑन-डिवाइस कंप्यूटिंग पर काज क' रहल अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>मुख्य अपडेट:</strong><p>हार्क ने पर्सनल एआई हार्डवेयर लेल $700M जुटा लेलक अछि। ई टीम डिवाइस पर लोकल कंप्यूटिंग आ यूज़र केँ अनुभव केँ बेहतर बनेबा मे लागल अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>इंडस्ट्री ट्रेंड:</strong><p>स्मार्टफोन एआई क मुख्य माध्यम नहि रहत। अब वीसी सब एआई वियरेबल्स आ नया एआई डिवाइस पर पैघ दांव लगा रहल अछि।</p></div>", cat: "कंज्यूमर हार्डवेयर" },
                     { title: "सिलिकॉन वैली क गठबंधन", desc: "Nvidia, AMD, Intel, आ Qualcomm ने एकही स्टार्टअप (Hark) मे निवेश केलक अछि—ई एम्बिएंट एआई पर कब्जा करबाक पैघ प्रयास अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>पैघ गठबंधन:</strong><p>चारू प्रतिद्वंद्वी चिप दिग्गज एकही राउंड मे निवेश केलक अछि। एकर अर्थ अछि जे कियो एम्बिएंट एआई क मुख्य रस्ता छोड़ब नहि चाहैत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>रणनीति:</strong><p>हार्क एहि निवेश सँ एकटा नव Nvidia B200 क्लस्टर बना रहल अछि आ टीम मे 200 रिसर्चर सब केँ जोड़ि रहल अछि।</p></div>", cat: "इन्फ्रास्ट्रक्चर कैपिटल" },
-                    { title: "कोडेक्स गुरुवार: गोल मोड", desc: "कोडेक्स अब केवल चैट ऑटो-कम्प्लीट नहि रहल, 'गोल मोड' के जरिए ई एकटा स्वतंत्र सॉफ्टवेयर एजेंट बनि गेल अछि जे स्वयं कोडिंग करैत अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>बदलाव:</strong><p>कोडेक्स क नव 'गोल मोड' डेवलपर केँ केवल एकटा अंतिम लक्ष्य आ सफलताक नियम बताबय लेल कहैत अछि। ओकरा बाद एआई स्वयं काज करैत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>उदाहरण:</strong><p>जेना अहाँ कहब: '/pricing पेज पर पेमेंट गेटवे लगा द'। एआई स्वयं कोडिंग आ टेस्टिंग तब धरि करत जब धरि काज पूरा नहि भ' जाएत।</p></div>", cat: "स्वायत्त एजेंट्स" },
-                    { title: "विज़ुअल अपशॉट्स आ लॉक रन", desc: "कोडेक्स अब 'अपशॉट्स' के जरिए सीधे ऐप क स्क्रीन देख सकैत अछि आ लैपटॉप स्लीप हेबा पर सेहो काज जारी राखि सकैत अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>विज़ुअल लूप:</strong><p>एआई आब केवल कोडक लिखावट नहि देखैत अछि, बल्कि लाइव स्क्रीनक लेआउट आ स्टाइलिंगक गलती सेहो बुझि सकैत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>असिंक्रोनस काज:</strong><p>सिस्टम लॉक हेबा पर सेहो एआई क काज करब एकरा आओर उपयोगी बना दैत अछि। आब कोडर क काज मात्र रास्ता देखायब अछि।</p></div>", cat: "विज़ुअल कोडिंग" },
-                    { title: "वर्कडे के $500M क एजेंट कमाई", desc: "वर्कडे घोषणा केलक जे ओकर एआई एजेंट एआरआर $500 मिलियन के लग अछि, जाहि सँ ई साबित भ' रहल अछि जे पैघ कंपनी आब एआई एजेंट पर भारी खर्च क' रहल अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>कमाई क आंकड़ा:</strong><p>वर्कडे के एआई एजेंट इस्तेमाल करय वाला लोग दुगुना भ' गेल अछि। $500M के एआरआर ई देखबैत अछि जे आब एआई केवल टाइम पास नहि, बल्कि वर्कफोर्स क हिस्सा अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>बिजनेस संकेत:</strong><p>ई बाकी कंपनी सब केँ सेहो अपन एआई क सही परफॉर्मेंस देखएबाक लेल मजबूर करत।</p></div>", cat: "एजेंट इकोनॉमिक्स" },
-                    { title: "कैलिफोर्नियाक वर्कर प्रोटेक्शन", desc: "गवर्नर गेविन न्यूजम एआई क कारणे नौकरी बचेबाक लेल एकटा कार्यकारी आदेश जारी केने छथि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>वर्कर प्रोटेक्शन:</strong><p>कैलिफोर्निया एआई विस्थापन केँ ट्रैक करबाक लेल जॉब-इम्पैक्ट डैशबोर्ड लगा रहल अछि ताकि कामगार लोग केँ मदद कएल जा सकए।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>प्रभाव:</strong><p>आगू चलि क' एआई टूल बनेबाक लेल ई रिपोर्ट देबय पड़त जे कतेक लोकक नौकरी पर एकर असर पड़ल अछि।</p></div>", cat: "एआई नियम विभाजन" },
+                    { title: "कोडेक्स गुरुवार: गोल मोड", desc: "कोडेक्स अब केवल चैट ऑटो-கம்பீட் नहि रहल, 'गोल मोड' के जरिए ई एकटा स्वतंत्र सॉफ्टवेयर एजेंट बनि गेल अछि जे स्वयं कोडिंग करैत अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>बदलाव:</strong><p>कोडेक्स क नव 'गोल मोड' डेवलपर केँ केवल एकटा HRM3000 लक्ष्य आ सफलताक नियम बताबय लेल कहैत अछि। ओकरा बाद एआई स्वयं काज करैत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>उदाहरण:</strong><p>जेना अहाँ कहब: '/pricing पेज पर पेमेंट गेटवे लगा द'। एआई स्वयं कोडिंग आ टेस्टिंग तब धरि करत जब धरि काज पूरा नहि भ' जाएत।</p></div>", cat: "स्वायत्त एजेंट्स" },
+                    { title: "विज़ुअल अपशॉट्स आ लॉक रन", desc: "कोडेक्स अब 'अपशॉट्स' के जरिए सीधे ऐप क स्क्रीन देख सकैत अछि आ लैपटॉप स्लीप हेबा पर सेहो काज जारी राखि सकैत अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>विज़ुअल लूप:</strong><p>एआई आब केवल कोडक लिखावट नहि देखैত अछि, बल्कि लाइव स्क्रीनक लेआउट आ स्टाइलिंगक गलती सेहो बुझि सकैत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>असिंक्रोनस काज:</strong><p>सिस्टम लॉक हेबा पर सेहो एआई क काज करब एकरा आओर उपयोगी बना दैत अछि। आब कोडर क काज मात्र रास्ता देखायब अछि।</p></div>", cat: "विज़ुअल कोडिंग" },
+                    { title: "वर्कडे के $500M क एजेंट कमाई", desc: "वर्कडे घोषणा केलक जे ओकर एआई एजेंट एआरआर $500 मिलियन के लग अछि, जाहि सँ ई साबित भ' रहल अछि जे पैघ कंपनी आब एआई एजेंट पर भारी खर्च क' रहल अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>कमाई क आंकड़ा:</strong><p>वर्कडे के एआई... কাস্টমার সংখ্যা দুগুণ भ' गेल अछि। $500M के एआरआर ई देखबैत अछि जे आब एआई केवल टाइम पास नहि, बल्कि वर्कफोर्स क हिस्सा अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>बिजनेस संकेत:</strong><p>ई बाकी कंपनी सब केँ सेहो अपन एआई क सही परफॉर्मेंस देखएबाक लेल मजबूर करत।</p></div>", cat: "एजेंट इकोनॉमिक्स" },
+                    { title: "कैलिफोर्नियाक वर्कर प्रोटेक्शन", desc: "गवर्नर गेविन न्यूजम एआई क कारणे नौकरी बचेबाक लेल एकटा कार्यकारी आदेश जारी केने छथि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>वर्कर प्रोटेक्शन:</strong><p>कैलिफोर्निया एआई विस्थापन केँ ट्रैक करबाक लेल जॉब-इम्पैक्ट डैशबोर्ड लगा रहल अछि ताकि कामगार लोग केँ मदद कएल जा सकए।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>प्रभाव:</strong><p>आगू चलि क' एआई टูล बनेबाक लेल ई रिपोर्ट देबय पड़त जे कतेक लोकक नौकरी पर एकर असर पड़ल अछि।</p></div>", cat: "एआई नियम विभाजन" },
                     { title: "वाशिंगटन ने एआई बिल टालल", desc: "संघीय सरकार राष्ट्रीय एआई सुरक्षा बिल केँ टाल देलक अछि ताकि चीनक खिलाफ अमेरिकाक बढ़त कमजोर नहि होअए।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>सुरक्षा बनाम गति:</strong><p>वाशिंगटन नव खोजक गति केँ बचा क' राखब चाहैत अछि। चीन सँ मुकाबला क कारणे नियम टालि देल गेल अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>नियमक झंझट:</strong><p>एकर अर्थ अछि जे अलग-अलग राज्य मे अलग नियम होएत, जाहि सँ कोडिंग कंपनी सब लेल अनुपालन (compliance) मुश्किल भ' जाएत।</p></div>", cat: "राष्ट्रीय रणनीति" },
                     { title: "MOSS: स्वयं विकसित होमय वाला AI", desc: "MOSS एआई स्वयं लॉग्स पढ़ि क' अपन गलती सुधारैत अछि आ स्वयं अपन कोड दोबारा लिखि सकैत अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>सोर्स-लेवल अपडेट:</strong><p>MOSS केवल प्रॉम्प्ट नहि बदलैत अछि, ई सीधे अपन असली कोडबेस बदलि दैत अछि आ स्वयं केँ नव रूप दैत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>बेंचमार्क छलांग:</strong><p>ई एकही बार मे परफॉर्मेंस केँ 2.4 गुना बढ़ा देलक। एकर अर्थ अछि जे काजक लॉग्स एआई लेल सबसँ पैघ खजाना अछि।</p></div>", cat: "सेल्फ-इम्प्रूविंग टेक" },
-                    { title: "कोड ड्रिफ्ट क खतरा", desc: "MOSS परफॉर्मेंस केँ 2.4 गुना बढ़ा देलक। मुदा, बार-बार स्वयं कोड बदलला सँ 'ड्रिफ्ट' क खतरा पैदा होइत अछि जतय एआई काबू सँ बाहर जा सकैत अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>एलाइनमेंट संकट:</strong><p>जखन एআই स्वयं अपन कोड लिखैत अछि, तँ किछ समय बाद ओ पुराना नियम आ सुरक्षा मानकों सँ भटक सकैत अछि जेकरा 'कोड ड्रिफ्ट' कहल जाइत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>बचाव:</strong><p>सुरक्षित लॉग्स आ सिस्टम डीबगिंग ही एकर मुख्य समाधान होएत।</p></div>", cat: "एजेंटिक रिस्क" },
-                    { title: "इकोसिस्टमक निर्माण", desc: "KritaVa मे, हम सब एआई क एहि वर्टिकलाइजेशन पर काज क' रहल छी। आम एआई क दिन आब गेल।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>KritaVa क सोच:</strong><p>जेनरिक एआई आब बहुत सस्ता अछि। असली वैल्यू मात्र विशिष्ट काज करय वाला वर्टिकल एआई आ विशिष्ट डेटा क लग अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>NeeVLY क नीति:</strong><p>NeeVLY मे हम सब लोकल हार्डवेयर व्यापारी सभक लेल एही वर्टिकल एआई क प्रयोग क' क' पूरा बाजार केँ व्यवस्थित क' रहल छी।</p></div>", cat: "KritaVa विज़न" }
+                    { title: "код дрифт क खतरा", desc: "MOSS परफॉर्मेंस केँ 2.4 गुना बढ़ा देलक। मुदा, बार-बार स्वयं कोड बदलला सँ 'ड्रिफ्ट' क खतरा पैदा होइत अछि जतय एआई काबू सँ बाहर जा सकैत अछि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>एलाइनमेंट संकट:</strong><p>जखन एआई स्वयं अपन कोड लिखैत अछि, तँ किछ समय बाद ओ पुराना नियम आ सुरक्षा मानकों सँ भटक सकैत अछि जेकरा 'код дрифт' कहल जाइत अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>बचाव:</strong><p>सुरक्षित लॉग्स आ सिस्टम डीबगिंग ही एकर मुख्य समाधान होएत।</p></div>", cat: "एजेंटिक रिस्क" },
+                    { title: "इकोसिस्टमक निर्माण", desc: "KritaVa मे, हम सब एहि पैघ तकनीकी बदलाव पर ध्यान दैत छी। NeeVLY सँ ल' क' लॉन्ग-टर्म AI इंफ्रास्ट्रक्चर धरि।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>KritaVa क सोच:</strong><p>जेनरिक एआई आब बहुत सस्ता अछि। असली वैल्यू मात्र विशिष्ट काज करय वाला वर्टिकल एआई आ विशिष्ट डेटा क लग अछि।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>NeeVLY क नीति:</strong><p>NeeVLY मे हम सब लोकल हार्डवेयर व्यापारी सभक लेल एही वर्टिकल एआई क प्रयोग क' क' पूरा बाजार केँ व्यवस्थित क' रहल छी।</p></div>", cat: "KritaVa विज़न" }
                 ]
             },
             'mr': { 
@@ -514,7 +515,7 @@
                     { title: "वर्कडेचा $500M चा एजंट महसूल", desc: "वर्कडेने घोषित केले आहे की त्यांचा एआय एजंट एआरआर $500 दशलक्षच्या जवळ पोहोचत आहे, ज्यावरून हे स्पष्ट होते की कंपन्या एआय एजंट्सवर पैसे खर्च करत आहेत.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>महसूल आकडेवारी:</strong><p>वर्कडेचा एआय एजंट ग्राहक बेस दुप्पट झाला आहे. $500M एआरआर हे दर्शवते की कंपन्या आता एआयला केवळ एक टूल नाही तर वर्कफोर्सचा भाग मानत आहेत.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>व्यापार संकेत:</strong><p>हे इतर कंपन्यांना वास्तविक आर्थिक बेंचमार्कवर काम करण्यासाठी भाग पाडेल.</p></div>", cat: "एजंट इकॉनॉमिक्स" },
                     { title: "कॅलिफोर्नियाचा वर्कर शील्ड", desc: "गव्हर्नर गेविन न्यूजम यांनी एआय विस्थापनाला आळा घालण्यासाठी कामगारांचे हक्क, रिट्रेनिंग आणि सुरक्षा कार्यक्रमांवर कडक आदेश जारी केला आहे.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>वर्कर प्रोटेक्शन:</strong><p>कॅलिफोर्निया एआय विस्थापन ट्रॅक करण्यासाठी आणि कामगारांच्या सुरक्षेसाठी जॉब-इम्पॅक्ट डॅशबोर्ड लागू करत आहे.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>प्रभाव:</strong><p>भविष्यात एआय कंपन्यांना त्यांच्या प्रणालींमुळे होणाऱ्या कामगार विस्थापनाची आणि पारदर्शकतेची माहिती द्यावी लागेल.</p></div>", cat: "एआय नियमन विभाग" },
                     { title: "वाशिंग्टनने एआय बिल टाळले", desc: "संघीय सरकारने राष्ट्रीय एआय सुरक्षा कायदे लांबणीवर टाकले आहेत. यामुळे चीन विरुद्धची स्पर्धा कमकुवत होऊ नये असे प्रशासनाला वाटते.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>सुरक्षा विरुद्ध वेग:</strong><p>वाशिंग्टन नवकल्पनेचा वेग कायम ठेवू इच्छितो. आंतरराष्ट्रीय स्पर्धेचा विचार करून त्यांनी सुरक्षा कायदे टाळण्याचा निर्णय घेतला आहे.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>नियम विभाजन:</strong><p>यामुळे अमेरिकेत वेगवेगळ्या राज्यांमध्ये वेगवेगळे एआय कायदे असतील, ज्यामुळे कंपन्यांसाठी नियमांचे पालन करणे कठीण होईल.</p></div>", cat: "राष्ट्रीय धोरण" },
-                    { title: "MOSS: स्वतःहून विकसित होणारे AI", desc: "एका शोधनिबंधातून MOSS चा खुलासा झाला आहे. हे एआय प्रॉडक्शन लॉग्स वाचून स्वतःच्या चुका शोधून स्वतःचा कोड पुन्हा लिहू शकते.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>सोर्स-लेव्हल अपडेट:</strong><p>MOSS केवळ प्रॉम्प्ट बदलत नाही. हे वास्तविक कोडबेस आर्किटेक्चरमध्ये बदल करते आणि मानवी हस्तक्षेपाशिवाय स्वतःला अपडेट करते.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>बेंचमार्क झेप:</strong><p>याने केवळ एका चक्रात बेंचमार्क कामगिरी २.४ पटीने वाढवली. हे सिद्ध करते की ऑपरेशनल लॉग्स एआयसाठी अत्यंत मौल्यवान आहेत.</p></div>", cat: "सेल्फ-इम्प्रूव्हिंग टेक" },
+                    { title: "MOSS: स्वतःहून विकसित होणारे AI", desc: "एका शोधनिबंधातून MOSS चा खुलासा झाला आहे. हे एआय प्रॉडक्शन लॉग्स वाचून स्वतःच्या चुका शोधून स्वतःचा कोड पुन्हा लिहू शकते.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>सोर्स-लेव्हल अपडेट:</strong><p>MOSS केवळ प्रॉम्प्ट बदलत नाही. हे वास्तविक कोडबेस आर्किटेक्चरमध्ये बदल करते आणि मानवी हस्तक्षेपाशिवाय स्वतःला अपडेट करते.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>बेंचमार्क झेप:</strong><p>याने केवळ एका चक्रात बेंचमार्क कामगिरी २.४ पटीने वाढवली. हे सिद्ध करते की ऑपरेशनल लॉग्स एआयसाठी अत्यंत मौल्यवान आहेत.</p></div>", cat: "सेल्फ-इम्प्रूविंग टेक" },
                     { title: "कोड ड्रिफ्टचा धोका", desc: "MOSS ने कामगिरी २.४ पटीने सुधारली. तरीही, वारंवार स्वतःला अपडेट केल्याने 'ड्रिफ्ट'चा धोका निर्माण होतो जिथे एआय मानवी नियंत्रणाबाहेर जाऊ शकतो.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>अलाइनमेंट संकट:</strong><p>जेव्हा एआय स्वतःहून कोड लिहितो, तेव्हा तो मूळ सुरक्षा मानकांपासून भटकू शकतो, ज्याला 'कोड ड्रिफ्ट' म्हणतात.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>सुरक्षा उपाय:</strong><p>डीबगिंग लॉग्स आणि टेलीमेट्री ही या समस्येची मुख्य उत्तरे असतील.</p></div>", cat: "एजंटिक रिस्क" },
                     { title: "इकोसिस्टमची निर्मिती", desc: "KritaVa मध्ये, आम्ही एआयच्या या व्हर्टिकलायझेशनवर काम करत आहोत. सामान्य मॉडेल्सचा काळ आता संपला असून विशिष्ट क्षेत्रात काम करणारे एआय हेच भविष्य आहे.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>KritaVa व्हिजन:</strong><p>सामान्य एआय आता सोपा आणि स्वस्त झाला आहे. खरी किंमत केवळ विशिष्ट डेटा आणि व्यावहारिक उपयोगितांवर आधारित व्हर्टिकल इकोसिस्टममध्ये आहे.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>NeeVLY आणि एआय:</strong><p>NeeVLY मध्ये आम्ही स्थानिक पातळीवर लहान हार्डवेअर व्यापाऱ्यांसाठी याच व्हर्टिकल एआयचा वापर करून व्यवसाय आणि खरेदी व्यवस्थित करत आहोत.</p></div>", cat: "KritaVa व्हिजन" }
                 ]
@@ -526,13 +527,13 @@
                     { title: "হার্কের $700M সিরিজ এ সংগ্রহ", desc: "ব্রেট অ্যাডককের হার্ক (Hark) $6B মূল্যায়নে $700M সংগ্রহ করেছে, যা মূলত অন-ডিভাইস পার্সোনাল এআই এবং হার্ডওয়্যারের ওপর কাজ করছে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>মূল আপডেট:</strong><p>হার্ক পার্সোনাল এআই হার্ডওয়্যারের জন্য $700M সংগ্রহ করেছে। তারা অন-ডিভাইস কম্পিউটিং এবং ইউজার এক্সপেরিয়েন্সের ওপর গুরুত্ব দিচ্ছে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>ইন্ডাস্ট্রি ট্রেন্ড:</strong><p>স্মার্টফোন এআইয়ের একমাত্র মাধ্যম থাকবে না। ভিআরিং এবং অ্যাম্বিয়েন্ট কম্পিউটিংয়ের ওপর এখন বিশাল বিনিয়োগ আসছে।</p></div>", cat: "কনজিউমার হার্ডওয়্যার" },
                     { title: "সিলিকন ভ্যালির ঐতিহাসিক জোট", desc: "Nvidia, AMD, Intel, এবং Qualcomm একযোগে একই স্টার্টআপে (Hark) বিনিয়োগ করেছে—যা এআই হার্ডওয়্যার বাজারে আধিপত্য বিস্তারের এক নজিরবিহীন প্রয়াস।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>জোট:</strong><p>চারটি প্রধান প্রতিযোগী চিপ নির্মাতা একই রাউন্ডে বিনিয়োগ করেছে। এটি প্রমাণ করে যে কোনো কোম্পানিই এআই হার্ডওয়্যারের মূল চাবিকাঠি হাতছাড়া করতে চায় না।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>কৌশল:</strong><p>হার্ক এই বিনিয়োগ থেকে একটি নতুন Nvidia B200 ক্লাস্টার তৈরি করছে এবং দলের আকার ২০০-এ উন্নীত করছে।</p></div>", cat: "ইনফ্রাস্ট্রাকচার ক্যাপিটাল" },
                     { title: "কোডেক্স বৃহস্পতিবার: গোল মোড", desc: "কোডেক্স এখন আর শুধু চ্যাট অটো-কমপ্লিট নয়, এটি 'গোল মোড'-এর মাধ্যমে একটি স্বাধীন সফটওয়্যার এজেন্টে পরিণত হয়েছে যা স্বায়ত্তশাসিতভাবে কাজ করতে পারে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>পরিবর্তন:</strong><p>কোডেক্সের নতুন 'গোল মোড' ডেভেলপারদের শুধু একটি লক্ষ্য এবং সাফল্যের মানদণ্ড নির্ধারণ করতে দেয়। এআই এরপর নিজে থেকেই কাজ করে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>উদাহরণ:</strong><p>আপনি নির্দেশ দিতে পারেন: 'pricing পেজে পেমেন্ট গেটওয়ে যুক্ত করো'। মডেল এরপর কোডিং এবং টেস্টিং নিজে থেকেই চালিয়ে যাবে যতক্ষণ না কাজ সম্পন্ন হয়।</p></div>", cat: "স্বায়ত্তশাসিত এজেন্টস" },
-                    { title: "ভিজ্যুয়াল অপশটস এবং লক-স্ক্রিন রান", desc: "কোডেক্স এখন 'অপশটস' এর মাধ্যমে সরাসরি লাইভ অ্যাপ উইন্ডো দেখতে পারে এবং ল্যাপটপ স্লিপ বা লক থাকলেও কাজ চালিয়ে যেতে পারে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>ভিজ্যুয়াল লুপ:</strong><p>এআই এখন শুধু কোড দেখে না, বরং সরাসরি ভিজ্যুয়াল ডিজাইনের বিশ্লেষণ করে। এটি লেআউট এবং স্টাইলিংয়ের সমস্যাগুলি বুঝতে পারে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>অ্যাসিনক্রোনাস কাজ:</strong><p>সিস্টেম লক থাকলেও কাজ সচল রাখা এআই এজেন্টদের আরও বাস্তবসম্মত করে তোলে। এখন ডেভেলপারের কাজ শুধু স্থাপত্য বা গোল ঠিক করা।</p></div>", cat: "ভিজ্যুয়াল কোডিং" },
+                    { title: "ভিজ্যুয়াল অপশটস এবং লক-স্ক্রিন রান", desc: "কোডেক্স এখন 'অপশটস' এর মাধ্যমে সরাসরি লাইভ অ্যাপ উইন্ডো দেখতে পারে এবং ল্যাপটপ স্লিপ বা লক থাকলেও কাজ চালিয়ে যেতে পারে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>ভিজ্যুয়াল লুপ:</strong><p>এআই এখন শুধু কোড দেখে না, বরং সরাসরি ভিজ্যুয়াল ডিজাইনের বিশ্লেষণ করে। এটি লেআউট এবং স্টাইলিংয়ের সমস্যাগুলি বুঝতে পারে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>অ্যাসিনক্রোনাস কাজ:</strong><p>সistem লক থাকলেও কাজ সচল রাখা এআই এজেন্টদের আরও বাস্তবসম্মত করে তোলে। এখন ডেভেলপারের কাজ শুধু স্থাপত্য বা গোল ঠিক করা।</p></div>", cat: "ভিজ্যুয়াল কোডিং" },
                     { title: "ওয়ার্কডের $500M এজেন্টের রাজস্ব", desc: "ওয়ার্কডে ঘোষণা করেছে যে তাদের এআই এজেন্টের এআরআর $500 মিলিয়নের কাছাকাছি পৌঁছেছে, যা প্রমাণ করে যে কোম্পানিগুলো এআই এজেন্টের ওপর বিশাল বাজেট বরাদ্দ করছে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>রাজস্ব পরিসংখ্যান:</strong><p>ওয়ার্কডের এআই এজেন্ট গ্রাহক বেস দ্বিগুণ হয়েছে। $500M এআরআর এটি প্রমাণ করে যে কোম্পানিগুলো এখন এআই-কে শুধু একটি টুল নয়, বরং ওয়ার্কফোর্সের অংশ মনে করছে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>ব্যবসায়িক সংকেত:</strong><p>এটি অন্য কোম্পানিগুলোকেও বাস্তব আর্থিক বেঞ্চমার্কে কাজ করতে বাধ্য করবে।</p></div>", cat: "এজেন্ট ইকোনমিক্স" },
                     { title: "ক্যালিফোর্নিয়ার ওয়ার্কার শিল্ড", desc: "গভর্নর গ্যাভিন নিউসম এআই-এর কারণে সম্ভাব্য চাকরিচ্যুতি ঠেকাতে এবং কর্মীদের অধিকার রক্ষায় একটি কড়া নির্বাহী আদেশ জারি করেছেন।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>কর্মচারী সুরক্ষা:</strong><p>ক্যালিফোর্নিয়া এআই চাকরিচ্যুতি ট্র্যাক করতে এবং কর্মীদের সুরক্ষার জন্য জব-ইমপ্যাক্ট ড্যাশবোর্ড চালু করছে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>প্রভাব:</strong><p>ভবিষ্যতে এআই কোম্পানিগুলোকে তাদের ব্যবস্থার কারণে কর্মী ছাঁটাই এবং স্বচ্ছতার বিবরণী দিতে হবে।</p></div>", cat: "এআই নিয়ম বিভাজন" },
                     { title: "ওয়াশিংটনে এআই বিল স্থগিত", desc: "যুক্তরাষ্ট্রের ফেডারেল সরকার জাতীয় এআই নিরাপত্তা আইন স্থগিত করেছে। প্রশাসনের মতে, এতে চীনের সাথে প্রতিযোগিতা দুর্বল হতে পারে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>নিরাপত্তা বনাম গতি:</strong><p>ওয়াশিংটন উদ্ভাবনের গতি ধরে রাখতে চায়। ভূ-রাজনৈতিক প্রতিযোগিতার কথা মাথায় রেখে তারা নিরাপত্তা আইন স্থগিত করার সিদ্ধান্ত নিয়েছে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>নিয়ম বিভাজন:</strong><p>এর ফলে আমেরিকায় বিভিন্ন রাজ্যে আলাদা আলাদা এআই আইন থাকবে, যা কোম্পানির জন্য কমপ্লায়েন্স কঠিন করবে।</p></div>", cat: "জাতীয় কৌশল" },
                     { title: "MOSS: স্ব-উন্নত এআই", desc: "একটি নতুন গবেষণাপত্রে MOSS এআই উন্মোচন করা হয়েছে। এটি প্রোডাকশন লগ পড়ে নিজের ত্রুটি খুঁজে নিজে থেকেই কোড সংশোধন করতে পারে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>সোর্স-লেভেল আপডেট:</strong><p>MOSS শুধু প্রম্পটে পরিবর্তন আনে না, এটি সরাসরি আসল কোডবেসে পরিবর্তন করে এবং মানুষের সাহায্য ছাড়াই নিজেকে আপডেট করে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>বেঞ্চমার্ক লাফ:</strong><p>এটি মাত্র একটি চক্রে বেঞ্চমার্ক পারফরম্যান্স ২.৪ গুণ বাড়িয়েছে, যা প্রমাণ করে যে এআইয়ের জন্য লগ ডেটা অত্যন্ত গুরুত্বপূর্ণ।</p></div>", cat: "স্ব-উন্নত টেক" },
                     { title: "কোড ড্রিফটের ঝুঁকি", desc: "MOSS পারফরম্যান্স ২.৪ গুণ বাড়িয়েছে। তবে, বারবার নিজে থেকে কোড সংশোধন করায় 'ড্রিফট'-এর ঝুঁকি থাকে যেখানে এআই মানুষের নিয়ন্ত্রণের বাইরে চলে যেতে পারে।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>অ্যালাইনমেন্ট সংকট:</strong><p>যখন এআই স্বাধীনভাবে নিজের কোড লেখে, তখন কিছু সময় পরে সে মূল নিরাপত্তা মানদণ্ড থেকে বিচ্যুত হতে পারে, যাকে 'কোড ড্রিফট' বলে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>প্রতিকার:</strong><p>ডিবাগিং লগ এবং টেলিমেট্রিই এই সমস্যার প্রধান সমাধান।</p></div>", cat: "এজেন্টিক রিস্ক" },
-                    { title: "ইকোসিস্টেম তৈরি (KritaVa)", desc: "কৃতভায় আমরা এআই-এর এই ভার্টিকলাইজেশনের ওপর কাজ করছি। সাধারণ এআই-এর যুগ শেষ, নির্দিষ্ট ক্ষেত্রে কাজ করা এআই-ই ভবিষ্যৎ।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>কৃতভা ভিশন:</strong><p>সাধারণ এআই এখন অনেক সহজ ও সস্তা। আসল মূল্য কেবল নির্দিষ্ট ডেটা এবং বাস্তব অভিজ্ঞতার ওপর ভিত্তি করে তৈরি ভার্টিক্যাল ইকোসিস্টেমে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>নিভলি (NeeVLY):</strong><p>NeeVLY-তে আমরা স্থানীয় ক্ষুদ্র ব্যবসায়ীদের জন্য এই নির্দিষ্ট এআই ব্যবহার করে ব্যবসা ও কেনাকাটা সহজ করছি।</p></div>", cat: "কৃতভা ভিশন" }
+                    { title: "ইকোসিস্টেম তৈরি (KritaVa)", desc: "কৃতভায় আমরা এআই-এর এই ভার্টিকলাইজেশনের ওপর কাজ করছি। সাধারণ এআই-এর যুগ শেষ, নির্দিষ্ট ক্ষেত্রে কাজ করা এআই-ই ভবিষ্যৎ।", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>কৃতভা ভিশন:</strong><p>সাধারণ এআই এখন অনেক সহজ ও সস্তা। আসল মূল্য কেবল নির্দিষ্ট ডেটা এবং বাস্তব অভিজ্ঞতার ওপর ভিত্তি করে তৈরি ভার্টিক্যাল ইকোসিস্টেমে।</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>নিভলি (NeeVLY):</strong><p>NeeVLY-তে আমরা স্থানীয় ক্ষুদ্র ব্যবসায়ীদের জন্য এই নির্দিষ্ট এআই ব্যবহার করে ব্যবসা ও কেনাকাটা সহজ করছি।</p></div>", cat: "কৃতভা ভিশন" }
                 ]
             },
             'ta': { 
@@ -543,7 +544,7 @@
                     { title: "சிலிகான் வேலி கூட்டணி", desc: "Nvidia, AMD, Intel மற்றும் Qualcomm ஆகியவை ஒரே ஸ்டார்ட்அப்பில் (Hark) முதலீடு செய்துள்ளன—இது AI சந்தையில் ஆதிக்கம் செலுத்தும் ஒரு வரலாற்று முயற்சியாகும்.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>கூட்டணி:</strong><p>நான்கு முக்கிய சிப் தயாரிப்பாளர்கள் ஒரே சுற்றில் முதலீடு செய்துள்ளனர். எந்தவொரு நிறுவனமும் AI ஹார்டுவேரின் முக்கிய நுழைவாயிலை இழக்க விரும்பவில்லை என்பதை இது காட்டுகிறது.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>உத்தி:</strong><p>ஹார்க் இந்த முதலீட்டின் மூலம் புதிய Nvidia B200 கிளஸ்டரை உருவாக்குகிறது மற்றும் குழுவை 200 ஆக உயர்த்துகிறது.</p></div>", cat: "உள்கட்டமைப்பு மூலதனம்" },
                     { title: "கோடெக்ஸ் வியாழன்: கோல் மோடு", desc: "கோடெக்ஸ் இப்போது வெறும் சாட் அல்ல, 'கோல் மோடு' மூலம் ஒரு தன்னாட்சி சாஃப்ட்வேர் ஏஜெண்டாக மாறியுள்ளது, அது சுயமாக வேலை செய்யக்கூடியது.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>மாற்றம்:</strong><p>கோடெக்ஸின் புதிய 'கோல் மோடு' டெவலப்பர்களுக்கு ஒரு இலக்கையும் வெற்றியின் அளவுகோலையும் மட்டும் நிர்ணயிக்க அனுமதிக்கிறது. AI அதன் பின் தானாகவே வேலை செய்கிறது.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>உதாரணம்:</strong><p>'pricing பக்கத்தில் பேமெண்ட் வசதியை சேர்' என்று நீங்கள் கூறலாம். வேலை முடியும் வரை AI சுயமாக கோடிங் மற்றும் டெஸ்டிங் செய்யும்.</p></div>", cat: "தன்னாட்சி ஏஜெண்டுகள்" },
                     { title: "விஷுவல் அப்ஷாட்ஸ் & லாக் ரன்", desc: "கோடெக்ஸ் இப்போது 'அப்ஷாட்ஸ்' மூலம் நேரடியாக லைவ் ஆப் ஸ்கிரீனைப் பார்க்க முடியும் மற்றும் லேப்டாப் ஸ்லீப்பில் இருந்தாலும் வேலை செய்ய முடியும்.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>விஷுவல் லூப்:</strong><p>AI இப்போது கோடை மட்டும் பார்ப்பதில்லை, நேரடி லேஅவுட் மற்றும் ஸ்டைலிங் பிழைகளையும் கண்டறிகிறது.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>அசின்க் வேலை:</strong><p>சிஸ்டம் லாக் ஆகியிருந்தாலும் வேலை செய்வது AI ஏஜெண்டுகளை மிகவும் பயனுள்ளதாக்குகிறது. இப்போது டெவலப்பரின் பணி இலக்கை நிர்ணயிப்பது மட்டுமே.</p></div>", cat: "விஷுவல் கோடிங்" },
-                    { title: "வொர்க்டேயின் $500M ஏஜெண்ட் வருவாய்", desc: "வொர்க்டே தனது AI ஏஜெண்ட் வருவாய் $500 மில்லியனை எட்டியுள்ளதாக அறிவித்துள்ளது, இது நிறுவனங்கள் AI ஏஜெண்டுகளுக்கு பெரும் பட்ஜெட் ஒதுக்குவதை காட்டுகிறது.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>வருவாய் புள்ளிவிவரங்கள்:</strong><p>வொர்க்டேயின் AI ஏஜெண்ட் வாடிக்கையாளர்கள் இருமடங்காகியுள்ளனர். $500M வருவாய் என்பது நிறுவனங்கள் இப்போது AI-ஐ ஒரு டூலாக மட்டும் பார்க்காமல் பணியாளராக கருதுவதை காட்டுகிறது.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>பிசினస్ சிக்னல்:</strong><p>இது மற்ற நிறுவனங்களையும் உண்மையான நிதி அளவுக்கோல்களில் செயல்பட கட்டாயப்படுத்தும்.</p></div>", cat: "ஏஜெண்ட் பொருளாதாரம்" },
+                    { title: "வொர்க்டேயின் $500M ஏஜெண்ட் வருவாய்", desc: "வொர்க்டே தனது AI ஏஜெண்ட் வருவாய் $500 மில்லியனை எட்டியுள்ளதாக அறிவித்துள்ளது, இது நிறுவனங்கள் AI ஏஜெண்டுகளுக்கு பெரும் பட்ஜெட் ஒதுக்குவதை காட்டுகிறது.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>வருவாய் புள்ளிவிவரங்கள்:</strong><p>வொர்க்டேயின் AI ஏஜெண்ட் வாடிக்கையாளர்கள் இருமடங்காகியுள்ளனர். $500M வருவாய் என்பது நிறுவனங்கள் இப்போது AI-ஐ ஒரு டூலாக மட்டும் பார்க்காமல் பணியாளராக கருதுவதை காட்டுகிறது.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>பிசினஸ் சிக்னல்:</strong><p>இது மற்ற நிறுவனங்களையும் உண்மையான நிதி அளவுக்கோல்களில் செயல்பட கட்டாயப்படுத்தும்.</p></div>", cat: "ஏஜெண்ட் பொருளாதாரம்" },
                     { title: "கலிபோர்னியாவின் தொழிலாளர் பாதுகாப்பு", desc: "ஆளுநர் கேவின் நியூசம் AI வேலைவாய்ப்பு பாதிப்பை தடுக்கவும், தொழிலாளர் உரிமைகளை காக்கவும் கடுமையான உத்தரவை பிறப்பித்துள்ளார்.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>தொழிலாளர் பாதுகாப்பு:</strong><p>கலிபோர்னியா AI வேலைவாய்ப்பு பாதிப்பை கண்காணிக்கவும், தொழிலாளர்களை பாதுகாக்கவும் ஜாப்-இம்பாக்ட் டேஷ்போர்டை உருவாக்குகிறது.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>தாக்கம்:</strong><p>எதிர்காலத்தில் AI நிறுவனங்கள் தங்கள் தொழில்நுட்பத்தால் ஏற்படும் வேலைவாய்ப்பு பாதிப்புகள் குறித்து அறிக்கை சமர்ப்பிக்க வேண்டும்.</p></div>", cat: "AI விதிமுறை பிரிப்பு" },
                     { title: "வாஷிங்டனில் AI மசோதா நிறுத்தம்", desc: "மத்திய அரசு தேசிய AI பாதுகாப்பு சட்டத்தை நிறுத்தி வைத்துள்ளது. இதனால் சீனாவுடனான போட்டி பலவீனமடையலாம் என அரசு கருதுகிறது.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>பாதுகாப்பு Vs வேகம்:</strong><p>வாஷிங்டன் கண்டுபிடிப்புகளின் வேகத்தை தக்கவைக்க விரும்புகிறது. புவிசார் அரசியல் போட்டியை கருத்தில் கொண்டு அவர்கள் பாதுகாப்பு சட்டத்தை தள்ளிவைத்துள்ளனர்.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>விதிமுறை பிரிவு:</strong><p>இதனால் அமெரிக்காவில் வெவ்வேறு மாநிலங்களில் வெவ்வேறு AI விதிகள் இருக்கும், இது நிறுவனங்களுக்கு சிக்கலை ஏற்படுத்தும்.</p></div>", cat: "தேசிய உத்தி" },
                     { title: "MOSS: சுயமாக வளரும் AI", desc: "ஒரு புதிய ஆராய்ச்சி கட்டுரை MOSS AI-ஐ அறிமுகப்படுத்தியுள்ளது. இது சிஸ்டம் லாக்ஸை படித்து தன் பிழைகளை தானே திருத்திக் கொள்ளும்.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>சோர்ஸ் லெவல் அப்டேட்:</strong><p>MOSS வெறும் ப்ராம்ப்டில் மட்டும் மாற்றங்களை செய்யாது, நேரடியாக ஒரிஜினல் கோட் பேஸில் மாற்றங்களை செய்து மனித உதவியின்றி அப்டேட் செய்கிறது.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>பெஞ்ச்மார்க் பாய்ச்சல்:</strong><p>இது ஒரே சுற்றில் பெஞ்ச்மார்க் திறனை 2.4 மடங்கு அதிகரித்துள்ளது, இது AI-க்கு லாக் தரவுகள் எவ்வளவு முக்கியம் என்பதை காட்டுகிறது.</p></div>", cat: "சுயமாக வளரும் டெக்" },
@@ -553,15 +554,15 @@
             },
             'te': { 
                 name: 'తెలుగు', title: 'బుద్ధిమత్త.', subtitle: 'వేగంగా అభివృద్ధి చెందుతోంది.', 
-                desc: "నిర్మాతల కోసం నేటి సాంకేతిక మార్పులు. ఎలాంటి అతిశయోక్తి లేదు. రేపటి మౌలిక సదుపాయాలను నిర్మించడానికి మీకు కావలసిన నిర్మాణాత్మక మార్పులు మాత్రమే.",
+                desc: "నిర్మాతల కోసం నేటి సాంకేతిక మార్పులు. ఎలాంటి ఆడంబరం లేదు. రేపటి మౌలిక సదుపాయాలను నిర్మించడానికి మీకు కావలసిన నిర్మాణాత్మక మార్పులు మాత్రమే.",
                 cards: [
-                    { title: "హార్క్ $700M నిధుల సేకరణ", desc: "బ్రెట్ ఆడ్‌కాక్ యొక్క హార్క్ (Hark) $6B వాల్యుయేషన్‌తో $700M సేకరించింది, ఇది ఆన్-డివైస్ పర్సనల్ AI మరియు హార్డ్‌వేర్‌పై పని చేస్తోంది.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>ప్రధాన అప్‌డేట్:</strong><p>హార్క్ పర్సనల్ AI హార్డ్‌వేర్ కోసం $700M సేకరించింది. వారు ఆన్-డివైస్ కంప్యూటింగ్ మరియు యూజర్ ఎక్స్‌పీరియన్స్‌పై దృష్టి పెడుతున్నారు.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>ఇండస్ట్రీ ట్రెండ్:</strong><p>స్మార్ట్‌ఫోన్లు మాత్రమే AI యొక్క ఏకైక మాధ్యమంగా ఉండవు. వియరబుల్స్ మరియు యాంబియంట్ కంప్యూటింగ్‌పై ఇప్పుడు భారీ పెట్టుబడులు వస్తున్నాయి.</p></div>", cat: "కన్స్యూమర్ హార్డ్‌వేర్" },
+                    { title: "హార్క్ $700M నిధుల సేకరణ", desc: "బ్రెట్ ఆడ్‌కాక్ యొక్క హార్క్ (Hark) $6B వాల్యుయేషన్‌తో $700M సేకరించింది, ఇది ఆన్-డివైస్ పర్సనల్ AI మరియు హార్డ్‌వేర్‌పై పని చేస్తోంది.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>ప్రధాన అప్‌డేట్:</strong><p>హార్క్ పర్సనల్ AI హార్డ్‌వేర్ కోసం $700M సేకరించింది. వారు ఆన్-డివైస్ కంప్ల్యూటింగ్ మరియు యూజర్ ఎక్స్‌పీరియన్స్‌పై దృష్టి పెడుతున్నారు.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>ఇండస్ట్రీ ట్రెండ్:</strong><p>స్మార్ట్‌ఫోన్లు మాత్రమే AI యొక్క ఏకైక మాధ్యమంగా ఉండవు. వియరబుల్స్ మరియు యాంబియంట్ కంప్యూటింగ్‌పై ఇప్పుడు భారీ పెట్టుబడులు వస్తున్నాయి.</p></div>", cat: "కన్స్యూమర్ హార్డ్‌వేర్" },
                     { title: "సిలికాన్ వ్యాలీ కూటమి", desc: "Nvidia, AMD, Intel, మరియు Qualcomm ఒకే స్టార్టప్‌లో (Hark) పెట్టుబడి పెట్టాయి—ఇది AI మార్కెట్‌లో ఆధిపత్యం వహించడానికి ఒక చారిత్రక ప్రయత్నం.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>కూటమి:</strong><p>నాలుగు ప్రధాన చిప్ తయారీదారులు ఒకే రౌండ్‌లో పెట్టుబడి పెట్టారు. ఏ కంపెనీ కూడా AI హార్డ్‌వేర్ యొక్క ప్రధాన మార్గాన్ని కోల్పోవడానికి ఇష్టపడటం లేదని ఇది చూపిస్తుంది.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>వ్యూహం:</strong><p>హార్క్ ఈ పెట్టుబడితో కొత్త Nvidia B200 క్లస్టర్‌ను తయారు చేస్తోంది మరియు బృందాన్ని 200కి పెంచుతోంది.</p></div>", cat: "ఇన్‌ఫ్రాస్ట్రక్చర్ క్యాపిటల్" },
                     { title: "కోడెక్స్ గురువారం: గోల్ మోడ్", desc: "కోడెక్స్ ఇప్పుడు కేవలం చాట్ ఆటో-కంప్లీట్ కాదు, 'గోల్ మోడ్' ద్వారా ఒక స్వతంత్ర సాఫ్ట్‌వేర్ ఏజెంట్‌గా మారింది, ఇది స్వయంగా పని చేయగలదు.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>మార్పు:</strong><p>కోడెక్స్ యొక్క కొత్త 'గోల్ మోడ్' డెవలపర్‌లకు ఒక లక్ష్యాన్ని మరియు విజయ ప్రమాణాలను మాత్రమే నిర్ణయించడానికి అనుమతిస్తుంది. AI ఆ తర్వాత స్వయంగా పని చేస్తుంది.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>ఉదాహరణ:</strong><p>'pricing పేజీలో పేమెంట్ గేట్‌వేను జోడించు' అని మీరు చెప్పవచ్చు. పని పూర్తయ్యే వరకు AI స్వయంగా కోడింగ్ మరియు టెస్టింగ్ చేస్తుంది.</p></div>", cat: "స్వతంత్ర ఏజెంట్లు" },
                     { title: "విజువల్ అప్‌షాట్స్ & లాక్ రన్", desc: "కోడెక్స్ ఇప్పుడు 'అప్‌షాట్స్' ద్వారా నేరుగా లైవ్ యాప్ విండోను చూడగలదు మరియు లాప్‌టాప్ స్లీప్‌లో ఉన్నప్పటికీ పని చేయగలదు.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>విజువల్ లూప్:</strong><p>AI ఇప్పుడు కోడ్‌ను మాత్రమే చూడదు, నేరుగా లేఅవుట్ మరియు స్టైలింగ్ లోపాలను కూడా గుర్తిస్తుంది.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>అసింక్ పని:</strong><p>సిస్టమ్ లాక్ అయినప్పటికీ పని చేయడం AI ఏజెంట్లను మరింత ఉపయోగకరంగా చేస్తుంది. ఇప్పుడు డెవలపర్ పని లక్ష్యాన్ని నిర్ణయించడం మాత్రమే.</p></div>", cat: "విజువల్ కోడింగ్" },
                     { title: "వర్క్‌డే యొక్క $500M ఏజెంట్ రాబడి", desc: "వర్క్‌డే తన AI ఏజెంట్ రాబడి $500 మిలియన్లకు చేరుకుందని ప్రకటించింది, ఇది సంస్థలు AI ఏజెంట్లకు భారీ బడ్జెట్ కేటాయిస్తున్నట్లు చూపుతుంది.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>రాబడి గణాంకాలు:</strong><p>వర్క్‌డే AI ఏజెంట్ కస్టమర్లు రెట్టింపు అయ్యారు. $500M రాబడి అనేది కంపెనీలు ఇప్పుడు AIని ఒక టూల్‌గా మాత్రమే చూడకుండా ఉద్యోగిగా భావిస్తున్నట్లు చూపిస్తుంది.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>బిజినెస్ సిగ్నల్:</strong><p>ఇది ఇతర కంపెనీలను కూడా నిజమైన ఆర్థిక ప్రమాణాలపై పని చేయడానికి బలవంతం చేస్తుంది.</p></div>", cat: "ఏజెంట్ ఎకనామిక్స్" },
                     { title: "కాలిఫోర్నియా వర్కర్ ప్రొటెక్షన్", desc: "గవర్నర్ గావిన్ న్యూసమ్ AI ఉద్యోగ నష్టాలను నివారించడానికి మరియు కార్మిక హక్కులను రక్షించడానికి కఠినమైన ఆదేశాలను జారీ చేశారు.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>ఉద్యోగుల రక్షణ:</strong><p>కాలిఫోర్నియా AI ఉద్యోగ నష్టాలను పర్యవేక్షించడానికి మరియు కార్మికులను రక్షించడానికి జాబ్-ఇంపాక్ట్ డ్యాష్‌బోర్డ్‌ను నిర్మిస్తుంది.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>ప్రభావం:</strong><p>భవిష్యత్తులో AI కంపెనీలు తమ సాంకేతికత వల్ల కలిగే ఉద్యోగ నష్టాలపై నివేదిక సమర్పించాలి.</p></div>", cat: "AI నిబంధన విభజన" },
-                    { title: "వాషింగ్టన్‌లో AI బిల్లు నిలిపివేత", desc: "ఫెడరల్ ప్రభుత్వం జాతీయ AI భద్రతా చట్టాన్ని నిలిపివేసింది. దీనివల్ల చైనాతో పోటీ బలహీనపడవచ్చునని ప్రభుత్వం భావిస్తోంది.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>రక్షణ Vs వేగం:</strong><p>వాషింగ్టన్ ఆవిష్కరణల వేగాన్ని కాపాడుకోవాలని కోరుకుంటోంది. భౌగోళిక రాజకీయ పోటీని దృష్టిలో ఉంచుకుని వారు భద్రతా చట్టాన్ని వాయిదా వేశారు.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>నిబంధనల విభజన:</strong><p>దీనివల్ల అమెరికాలో వివిధ రాష్ట్రాల్లో వేర్వేరు AI నిబంధనలు ఉంటాయి, ఇది కంపెనీలకు ఇబ్బంది కలిగిస్తుంది.</p></div>", cat: "జాతీయ వ్యూహం" },
+                    { title: "వాషింగ్టన్‌లో AI బిల్లు నిలిపివేత", desc: "ఫెడరల్ ప్రభుత్వం జాతీయ AI భద్రతా చట్టాన్ని నిలిపివేసింది. దీనివల్ల చైనాతో పోటీ బలహీనపడవచ్చునని ప్రభుత్వం భావిస్తోంది.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>రక్షణ Vs వేగం:</strong><p>వాషింగ్టన్ ఆవిష్కరణల వేగాన్ని కాపాడుకోవాలని కోరుకుంటోంది. భౌగోళిక రాజకీయ పోటీని దృష్టిలో ఉంచుకుని వారు భద్రతా చట్టాన్ని వాయిదా వేశారు.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>నిబంధనల విభజన:</strong><p>దీనివల్ల అమెరికాలో विभिन्न రాష్ట్రాల్లో వేర్వేరు AI నిబంధనలు ఉంటాయి, ఇది కంపెనీలకు ఇబ్బంది కలిగిస్తుంది.</p></div>", cat: "జాతీయ వ్యూహం" },
                     { title: "MOSS: స్వయంగా వృద్ధి చెందే AI", desc: "ఒక కొత్త పరిశోధన పత్రం MOSS AIని పరిచయం చేసింది. ఇది సిస్టమ్ లాగ్‌లను చదివి తన లోపాలను తనే సరిదిద్దుకుంటుంది.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>సౌర్స్ లెవెల్ అప్‌డేట్:</strong><p>MOSS కేవలం ప్రాంప్ట్‌లో మాత్రమే మార్పులు చేయదు, నేరుగా ఒరిజినల్ కోడ్ బేస్‌లో మార్పులు చేసి మానవ ప్రమేయం లేకుండా అప్‌డేట్ చేస్తుంది.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>బెంచ్‌మార్క్ జంప్:</strong><p>ఇది ఒకే రౌండ్‌లో బెంచ్‌మార్క్ సామర్థ్యాన్ని 2.4 రెట్లు పెంచింది, ఇది AIకి లాగ్ డేటా ఎంత ముఖ్యమో చూపుతుంది.</p></div>", cat: "స్వయంగా వృద్ధి చెందే టెక్" },
                     { title: "కోడ్ డ్రిఫ్ట్ ముప్పు", desc: "MOSS సామర్థ్యాన్ని 2.4 రెట్లు పెంచింది. అయినప్పటికీ, స్వయంగా కోడ్‌ను సరిదిద్దేటప్పుడు 'డ్రిఫ్ట్' ముప్పు ఉంది, దీనివల్ల AI నియంత్రణ కోల్పోవచ్చు.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>అలైన్‌మెంట్ సమస్య:</strong><p>AI స్వయంగా కోడ్ రాసేటప్పుడు, అది కాలక్రమేణా అసలు భద్రతా నియమాలకు దూరంగా వెళ్ళవచ్చు, దీనిని 'కోడ్ డ్రిఫ్ట్' అంటారు.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>పరిష్కారం:</strong><p>డీబగ్గింగ్ లాగ్స్ మరియు టెలిమెట్రీ దీనికి ప్రధాన పరిష్కారం.</p></div>", cat: "ఏజెంటిక్ రిస్క్" },
                     { title: "ఎకోసిస్టమ్ నిర్మాణం (KritaVa)", desc: "కృతవాలో, మేము AI యొక్క ఈ వెర్టికలైజేషన్‌పై దృష్టి పెడుతున్నాము. సాధారణ AIల కాలం ముగిసింది, ప్రత్యేక అవసరాల కోసం నిర్మించే AIలే భవిష్యత్తు.", detail: "<div class='mb-5'><strong class='text-brand-text1 text-lg block mb-2'>KritaVa విజన్:</strong><p>సాధారణ AI ఇప్పుడు సులభం మరియు చౌక. అసలు విలువ నిర్దిష్ట డేటా మరియు వాస్తవ అవసరాలను తీర్చే వెర్టికల్ ఎకోసిస్టమ్‌లోనే ఉంది.</p></div><div><strong class='text-brand-text1 text-lg block mb-2'>NeeVLY:</strong><p>NeeVLYలో మేము స్థానిక చిన్న వ్యాపారుల కోసం ఈ ప్రత్యేక AIని ఉపయోగించి వ్యాపారాన్ని సరళీకరిస్తున్నాము.</p></div>", cat: "KritaVa విజన్" }
@@ -609,7 +610,7 @@
             // Inject Logo for card 9 specifically, else use FA icon
             const iconContainer = document.getElementById('modal-icon-container');
             if (index === 9) {
-                iconContainer.innerHTML = `<img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" alt="KritaVa" class="w-full h-full object-cover rounded-xl">`;
+                iconContainer.innerHTML = `<img src="ChatGPT Image May 15, 2026, 07_04_43 PM.png" onerror="this.style.display='none'" alt="KritaVa" class="w-full h-full object-cover rounded-xl">`;
             } else {
                 iconContainer.innerHTML = `<i class="fa-solid ${iconClass} text-brand-accent1 text-2xl"></i>`;
             }
@@ -666,72 +667,85 @@
         });
 
         // --- 5. Three.js Particle Background ---
-        const canvas = document.getElementById('bg-canvas');
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 30;
+        let scene, camera, renderer, particleMesh;
+        try {
+            const canvas = document.getElementById('bg-canvas');
+            if (canvas && typeof THREE !== 'undefined') {
+                renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 800;
-        const posArray = new Float32Array(particlesCount * 3);
-        const colorArray = new Float32Array(particlesCount * 3);
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera.position.z = 30;
 
-        const colorTeal = new THREE.Color('#4FA3A5');
-        const colorWhite = new THREE.Color('#ffffff');
+                const particlesGeometry = new THREE.BufferGeometry();
+                const particlesCount = 800;
+                const posArray = new Float32Array(particlesCount * 3);
+                const colorArray = new Float32Array(particlesCount * 3);
 
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 100;
+                const colorTeal = new THREE.Color('#4FA3A5');
+                const colorWhite = new THREE.Color('#ffffff');
+
+                for(let i = 0; i < particlesCount * 3; i++) {
+                    posArray[i] = (Math.random() - 0.5) * 100;
+                }
+
+                for(let i = 0; i < particlesCount; i++) {
+                    const mixedColor = colorWhite.clone().lerp(colorTeal, Math.random() * 0.7);
+                    colorArray[i*3] = mixedColor.r;
+                    colorArray[i*3+1] = mixedColor.g;
+                    colorArray[i*3+2] = mixedColor.b;
+                }
+
+                particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+
+                const particlesMaterial = new THREE.PointsMaterial({
+                    size: 0.15,
+                    vertexColors: true,
+                    transparent: true,
+                    opacity: 0.6,
+                    blending: THREE.AdditiveBlending
+                });
+
+                particleMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+                scene.add(particleMesh);
+
+                let mouseX = 0;
+                let mouseY = 0;
+                document.addEventListener('mousemove', (event) => {
+                    mouseX = event.clientX / window.innerWidth - 0.5;
+                    mouseY = event.clientY / window.innerHeight - 0.5;
+                });
+
+                const animate = () => {
+                    requestAnimationFrame(animate);
+                    particleMesh.rotation.y += 0.001;
+                    particleMesh.rotation.x += 0.0005;
+                    
+                    camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
+                    camera.position.y += (-mouseY * 5 - camera.position.y) * 0.05;
+                    camera.lookAt(scene.position);
+
+                    renderer.render(scene, camera);
+                };
+                animate();
+
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            } else {
+                console.warn("Three.js not loaded or canvas missing.");
+                if (canvas) canvas.style.display = 'none';
+            }
+        } catch (e) {
+            console.error("Three.js initialization failed:", e);
+            const canvas = document.getElementById('bg-canvas');
+            if (canvas) canvas.style.display = 'none';
         }
-
-        for(let i = 0; i < particlesCount; i++) {
-            const mixedColor = colorWhite.clone().lerp(colorTeal, Math.random() * 0.7);
-            colorArray[i*3] = mixedColor.r;
-            colorArray[i*3+1] = mixedColor.g;
-            colorArray[i*3+2] = mixedColor.b;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
-
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.15,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.6,
-            blending: THREE.AdditiveBlending
-        });
-
-        const particleMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particleMesh);
-
-        let mouseX = 0;
-        let mouseY = 0;
-        document.addEventListener('mousemove', (event) => {
-            mouseX = event.clientX / window.innerWidth - 0.5;
-            mouseY = event.clientY / window.innerHeight - 0.5;
-        });
-
-        const animate = () => {
-            requestAnimationFrame(animate);
-            particleMesh.rotation.y += 0.001;
-            particleMesh.rotation.x += 0.0005;
-            
-            camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
-            camera.position.y += (-mouseY * 5 - camera.position.y) * 0.05;
-            camera.lookAt(scene.position);
-
-            renderer.render(scene, camera);
-        };
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
 
         // --- 6. KritaVa AI Chat Logic ---
         const chatToggle = document.getElementById('chat-toggle');
